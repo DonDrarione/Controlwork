@@ -4,8 +4,10 @@ int numberofelements = Convert.ToInt32(Console.ReadLine());
 
 
 var A = new string[numberofelements];
-Adder(A, numberofelements);
-void Adder(string[] A, int numberofelements)
+Adder(ref A, numberofelements);
+var b = new List<string>();
+searcher(A, numberofelements, ref b);
+void Adder(ref string[] A, int numberofelements)
 {
     for (int i = 0; i < numberofelements; i++)
     {
@@ -13,10 +15,15 @@ void Adder(string[] A, int numberofelements)
 
     }
 }
-var b = new List<string>();
-for (int i = 0; i < numberofelements; i++)
+
+void searcher(string[] A, int numberofelements, ref List<string> b)
 {
-    if (A[i].Length <= 3) b.Add(A[i]);
+
+
+    for (int i = 0; i < numberofelements; i++)
+    {
+        if (A[i].Length <= 3) b.Add(A[i]);
+    }
 }
 Console.WriteLine(string.Join(", ", b));
 
