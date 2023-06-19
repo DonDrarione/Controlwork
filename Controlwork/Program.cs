@@ -7,6 +7,7 @@ var A = new string[numberofelements];
 
 
 
+
 for (int i = 0; i < numberofelements; i++)
 {
     A[i] = Console.ReadLine();
